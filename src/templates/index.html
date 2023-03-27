@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+
+    <title> Simple client for test </title>
+
+    <script>
+        async function sendRequest(){
+            const urlInput = document.getElementById('url-input').value;
+            const response = await fetch('http://localhost:8080/get_url?url=${urlInput}');
+            const data = await response.json();
+
+            if (response.status === 200) {
+                window.location.href = data.url;
+                // document.getElementById('result').innerText = 'Received URL: ${data.url}';
+            }else{
+                document.getElementById('result').innerText = 'Error: ${data.error}';
+            }
+        }
+
+        async function redirectToURL(){
+            const url = await fetch('http://localhost:5000/get_url')
+            const data = await response.json();
+
+            if (response.status === 200) {
+                window.location.href = data.url;
+            } else {
+                document.getElementById('result').innerText = 'Error: ${data.error}'
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1> Send URL to the server</h1>
+    <input type="text" id="url-input" placeholder="Enter URL" autocomplete="off" />
+    <button onclick="sendRequest()"> Send Request</button>
+
+    <button onclick="redirectToURL()"> Go to URL</button>
+    <p id="result"> </p>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript GET Request</title>
+    <script>
+        function redirectToUrl() {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    const data = JSON.parse(this.responseText);
+                    window.location.href = data.url;
+                } else if (this.readyState === 4) {
+                    document.getElementById('result').innerText = `Error: ${this.status}`;
+                }
+            };
+            xhr.open("GET", "http://localhost:5000/get_url", true);
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Redirect to URL</h1>
+    <button onclick="redirectToUrl()">Go to URL</button>
+    <p id="result"></p>
+</body>
+</html>
