@@ -57,7 +57,7 @@
                     document.getElementById('result').innerText = `Error: ${this.status}`;
                 }
             };
-            xhr.open("GET", "http://localhost:5000/get_url", true);
+            xhr.open("GET", location.origin + "/get_url", true);
             xhr.send();
         }
     </script>
