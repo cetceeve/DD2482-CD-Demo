@@ -20,7 +20,7 @@
 
         function QrCodeGenerator() {
             // http://192.168.0.106 --> Need to change depends the network
-            const serverUrl = "http://ec2-16-16-80-177.eu-north-1.compute.amazonaws.com/";
+            const serverUrl = location.origin;
             new QRCode(document.getElementById('qrcode'), serverUrl);
         }
 
