@@ -14,6 +14,10 @@ CORS(app)
 def index():
     return render_template('index.html')
 
+@app.route('/health')
+def health():
+  return "OK"
+
 
 @app.route('/get_url', methods=['GET'])
 def get_url():
