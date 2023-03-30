@@ -27,4 +27,3 @@ This command will start the container and map port 80 on your local machine to p
 
 That's it! You now have a Docker container running a Python test server. You can access the server by going to http://localhost in your web browser.
 
-> Yes, this was written by ChatGPT cause i am lazy
