@@ -4,7 +4,7 @@ WORKDIR /app
 
 # ADD Somenew 
 COPY requirements.txt .
-RUN pip3 install --no-cashe-dir -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY src/ .
 
