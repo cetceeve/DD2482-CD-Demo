@@ -15,7 +15,7 @@ def health():
 
 @app.route('/get_url', methods=['GET'])
 def get_url():
-    google_url = "https://www.google.com"
+    google_url = "https://duckduckgo.com"
     return jsonify({"url": google_url})
 
 
