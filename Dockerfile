@@ -2,10 +2,14 @@ FROM python:3.11.2-slim-bullseye
 
 WORKDIR /app
 
-RUN pip3 install Flask flask-cors
+# ADD Somenew 
+COPY requirements.txt .
+RUN pip3 install --no-cashe-dir -r requirements.txt
 
-COPY . .
+COPY src/ .
 
 EXPOSE 5000
-RUN chmod +x ./entrypoint.sh
-ENTRYPOINT [ "./entrypoint.sh" ]
+
+# With this command I think the server will work with 
+# the initial configuration
+CMD ["python", "app.py"]

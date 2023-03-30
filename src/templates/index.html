@@ -1,52 +1,9 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-
-    <title> Simple client for test </title>
-
-    <script>
-        async function sendRequest(){
-            const urlInput = document.getElementById('url-input').value;
-            const response = await fetch('http://localhost:8080/get_url?url=${urlInput}');
-            const data = await response.json();
-
-            if (response.status === 200) {
-                window.location.href = data.url;
-                // document.getElementById('result').innerText = 'Received URL: ${data.url}';
-            }else{
-                document.getElementById('result').innerText = 'Error: ${data.error}';
-            }
-        }
-
-        async function redirectToURL(){
-            const url = await fetch('http://localhost:5000/get_url')
-            const data = await response.json();
-
-            if (response.status === 200) {
-                window.location.href = data.url;
-            } else {
-                document.getElementById('result').innerText = 'Error: ${data.error}'
-            }
-        }
-    </script>
-</head>
-
-<body>
-    <h1> Send URL to the server</h1>
-    <input type="text" id="url-input" placeholder="Enter URL" autocomplete="off" />
-    <button onclick="sendRequest()"> Send Request</button>
-
-    <button onclick="redirectToURL()"> Go to URL</button>
-    <p id="result"> </p>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DD2842-CD-Demo</title>
-    <script>
+    <title>JavaScript GET Request</title>
+    <script src="{{ url_for('static', filename='qrcode.min.js') }}"></script>
+    <script type="text/javascript">
         function redirectToUrl() {
             const xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
@@ -60,11 +17,21 @@
             xhr.open("GET", location.origin + "/get_url", true);
             xhr.send();
         }
+
+        function QrCodeGenerator() {
+            // http://192.168.0.106 --> Need to change depends the network
+            const serverUrl = "http://ec2-16-16-80-177.eu-north-1.compute.amazonaws.com/";
+            new QRCode(document.getElementById('qrcode'), serverUrl);
+        }
+
+        window.onload = QrCodeGenerator;
     </script>
 </head>
 <body>
     <h1>Redirect to best search engine</h1>
     <button onclick="redirectToUrl()">Go to URL</button>
     <p id="result"></p>
+    <h2> Please scan this WQ code</h2>
+    <div id="qrcode"> </div>
 </body>
 </html>
