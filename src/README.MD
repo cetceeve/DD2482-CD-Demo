@@ -1,4 +1,4 @@
-# Server
+# Server 🖥️
 
 ## Python 🐍
 
@@ -107,7 +107,7 @@ The XMLHttpRequest object can be used to request data from a web server. Like ou
 Good resource for
 [HttpRequest](https://www.w3schools.com/xml/xml_http.asp)
 
-## QR Code
+## QR Code 🔳
 
 For the **_Qr Code_** I did some changes on the initial version of the code.
 
@@ -135,7 +135,7 @@ Finally, this IP should be changed to our Flask app too
 
 The Qrcode library tha I used is:[QRcode](https://github.com/davidshimjs/qrcodejs)
 
-## Other Resources
+## Other Resources 📚
 
 1. For Flask I read the documentation of the flask framework: [Flask Documentation](https://flask.palletsprojects.com/en/2.1.x/)
 2. As I mentioned before for the HTLM page I used the [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest) and also I found very interesting the [AJAX Introduction](https://www.w3schools.com/xml/ajax_intro.asp) from W3School.
