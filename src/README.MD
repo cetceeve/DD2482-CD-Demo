@@ -12,9 +12,11 @@ File structure for the server
 
 ```cmd
 - /src
+    - /static
+        - qrcode.min.js
     - /templates
         - index.html
-    - flaskServer.py
+    - app.py
 ```
 
 Quick links:
@@ -23,7 +25,7 @@ Quick links:
 - [index.html](./templates/index.html)
 - [flaskServer.py](./flaskServer.py)
 
-## flaskServer.py 🖥️
+## Flask Server app.py 🖥️
 
 In this file we develop our Flask server.
 
