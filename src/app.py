@@ -17,8 +17,8 @@ def index():
 
 @app.route('/get_url', methods=['GET'])
 def get_url():
-    # hardcoded_url = "https://github.com/cetceeve/DD2482-CD-Demo/tree/main"
-    hardcoded_url = "https://duckduckgo.com/"
+    hardcoded_url = "https://github.com/cetceeve/DD2482-CD-Demo/tree/main"
+    # hardcoded_url = "https://duckduckgo.com/"
     return jsonify({"url": hardcoded_url})
 
 
