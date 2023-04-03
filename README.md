@@ -49,3 +49,5 @@ Load Balancers allow us to have a consistent web-address even if the underlying
 infrastructure is replaced by AWS.
 https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html
 
+Nice video showcasing the core parts of an ECS Deployment.
+https://youtu.be/PgyFrkJaNys
